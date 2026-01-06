@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <climits>
+#include <string>
 
 
 long long bestQESoFar{INT_MAX}; // Keeps track of minimum QUE
