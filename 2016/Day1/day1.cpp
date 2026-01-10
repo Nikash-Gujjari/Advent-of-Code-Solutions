@@ -37,23 +37,28 @@ int main() {
         return 1;
     }
 
+    // Reading file input
+    std::string line{};
+    std::getline(file, line);
+
+    // A vector to store each direction
     std::vector<std::string> directions{};
     size_t start{0};
     size_t end{};
 
-    std::string line{};
-    std::getline(file, line);
-    
+    // Populating the vector with directions by using the ", " delimiter to split the file contents
     std::string delim{", "};
     while((end = line.find(delim, start)) != std::string::npos) {
         directions.push_back(line.substr(start, end - start));
         start = end + delim.length();
     }
-    directions.push_back(line.substr(start));
+    directions.push_back(line.substr(start)); // Needed for last direction that has no delimiter after it
 
+    // Keeps track of your x coordinate, y coordinate, and direction
     int x_cord{0};
     int y_cord{0};
     Direction yourDirection{North};
+
 
     std::unordered_set<std::pair<int, int>, pair_hash> visited{std::pair<int, int>{0, 0}};
 
@@ -68,7 +73,7 @@ int main() {
                 yourDirection = Direction(positive_mod(yourDirection + 1, 4));
             }
 
-            int steps{std::stoi(match[2].str())};
+            int steps{std::stoi(match[2].str())}; // Getting the number of steps as an int
 
             // Part 1
             // Incrementing appropriate coordinate based on direction
