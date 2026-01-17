@@ -12,7 +12,7 @@ int main() {
 
     int curr_num{5}; // Tracks current number location on keypad
     std::string bathroomCode{""}; // Stores each digit of the bathroom code
-    std::string line{};
+    std::string line{}; // Holds the line read from the file
 
     // Reading file input line by line
     while(std::getline(file, line)) {

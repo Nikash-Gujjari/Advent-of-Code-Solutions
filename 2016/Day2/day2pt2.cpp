@@ -14,7 +14,7 @@ int main() {
 
     char curr_num{'5'}; // Tracks current number location on keypad
     std::string bathroomCode{""}; // Stores each digit of the bathroom code
-    std::string line{};
+    std::string line{}; // Holds the line read from the file
 
     // A map that represents transitions from a given keypad number and direction
     std::unordered_map<char, std::unordered_map<char, char>> transitions{
