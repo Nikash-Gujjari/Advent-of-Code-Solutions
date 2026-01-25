@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <regex>
-#include <unordered_set>
+#include <vector>
 
 // Finds an ABA sequence in a supernet sequence (non-hypernet) and then finds the corresponding BAB sequence in
 // a hypernet sequence
@@ -34,9 +33,8 @@ int main() {
     }
 
     std::string line{}; // Holds the line read from the file
-    std::smatch match{}; // Holds matching groups in pattern 
 
-    int supportSSL{0};
+    int supportSSL{0}; // Holds the count of IPs that support SSL
 
     // Reading file input line by line
     while(std::getline(file, line)) {

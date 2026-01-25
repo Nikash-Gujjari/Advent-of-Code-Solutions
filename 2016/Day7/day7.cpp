@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <regex>
-#include <unordered_set>
 
 // Returns true if there is a 4 letter character sequence that consists of a pair of two different characters 
 // followed by the reverse of that pair, such as xyyx or abba. Returns false otherwise. 
@@ -24,9 +22,8 @@ int main() {
     }
 
     std::string line{}; // Holds the line read from the file
-    std::smatch match{}; // Holds matching groups in pattern 
 
-    int supportTLS{0};
+    int supportTLS{0}; // Holds the count of IPs that support TLS
 
     // Reading file input line by line
     while(std::getline(file, line)) {
@@ -54,7 +51,7 @@ int main() {
         supportTLS += (!ABBAInHypernet && ABBAInNonHypernet) ? 1 : 0; // Incrementing supportTLS counter if conditions are met
     }
 
-    std::cout << "Number of IPs that support TLS: " << supportTLS;
+    std::cout << "Number of IPs that support TLS: " << supportTLS; // Printing output
 
 
     return 0;
