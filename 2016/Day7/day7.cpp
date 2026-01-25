@@ -51,7 +51,7 @@ int main() {
             ABBAInNonHypernet = findABBAsequence(line.substr(startSearchIndex)) || ABBAInNonHypernet; 
         }
 
-        supportTLS += (!ABBAInHypernet && ABBAInNonHypernet) ? 1 : 0;
+        supportTLS += (!ABBAInHypernet && ABBAInNonHypernet) ? 1 : 0; // Incrementing supportTLS counter if conditions are met
     }
 
     std::cout << "Number of IPs that support TLS: " << supportTLS;
