@@ -75,6 +75,7 @@ int main() {
 
     decompressedLength += fileInput.size() - currPos; // Adding the final non-marker sequence length 
 
+    // Printing output
     std::cout << "Decompressed Length: " << decompressedLength << std::endl;
     std::cout << "[Part 2] Decompressed Length: " << decompressRecursion(fileInput);
 
