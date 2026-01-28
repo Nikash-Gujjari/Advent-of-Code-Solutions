@@ -205,7 +205,7 @@ int main() {
     int product{1}; // Will hold the product of disk values in the output bins
 
     // Calculating product
-    for(size_t inputIndex : inputPt2) {
+    for(const size_t& inputIndex : inputPt2) {
         product *= outputBin[inputIndex];
     }
     std::cout << "[Part 2]: Multiplying the values for the given output bin indices " << inputPt2 << " : " <<product; // Printing Part 2 Output
